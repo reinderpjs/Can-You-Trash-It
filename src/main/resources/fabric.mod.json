@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "cyti",
+  "version": "${version}",
+
+  "name": "Can You Trash It?",
+  "description": "Adds brand new waste containers to your Minecraft. It has three different variations: one for items, one for fluids and one for energy (like EU used in Tech Reborn).",
+  "authors": [
+    "Reinderp"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/cyti/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.reinderp.cyti.CYTIMod"
+    ],
+    "client": [
+      "net.reinderp.cyti.CYTIClient"
+    ],
+    "modmenu": [
+      "net.reinderp.cyti.config.TrashModMenuImpl"
+    ]
+  },
+  "mixins": [
+
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17",
+
+    "team_reborn_energy": ">=2.0.0-beta1",
+    "cloth-config2": ">=6.0.42"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

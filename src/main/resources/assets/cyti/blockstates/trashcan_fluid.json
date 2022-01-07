@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "cyti:block/trashcan_fluid" }
+    }
+}

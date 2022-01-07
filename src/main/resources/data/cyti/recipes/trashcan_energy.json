@@ -1,0 +1,23 @@
+ {
+   "type": "minecraft:crafting_shaped",
+   "pattern": [
+     "RTR",
+     "W W",
+     "WWW"
+   ],
+   "key": {
+     "W": {
+       "tag": "minecraft:cobblestone"
+     },
+     "R": {
+       "item": "minecraft:stone_slab"
+     },
+     "T": {
+        "item": "minecraft:redstone"
+     }
+   },
+   "result": {
+     "item": "cyti:trashcan_item",
+     "count": 1
+   }
+ }
