@@ -38,7 +38,6 @@
     "minecraft": "1.18.x",
     "java": ">=17",
 
-    "team_reborn_energy": ">=2.0.0-beta1",
     "cloth-config2": ">=6.0.42"
   },
   "suggests": {

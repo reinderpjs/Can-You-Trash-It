@@ -1,23 +1,23 @@
  {
    "type": "minecraft:crafting_shaped",
    "pattern": [
-     "RTR",
-     "W W",
-     "WWW"
+     "srs",
+     "c c",
+     "ccc"
    ],
    "key": {
-     "W": {
-       "tag": "minecraft:cobblestone"
+     "c": {
+       "item": "minecraft:cobblestone"
      },
-     "R": {
-       "item": "minecraft:stone_slab"
+     "s": {
+       "item": "minecraft:smooth_stone_slab"
      },
-     "T": {
+     "r": {
         "item": "minecraft:redstone"
      }
    },
    "result": {
-     "item": "cyti:trashcan_item",
+     "item": "cyti:trashcan_energy",
      "count": 1
    }
  }

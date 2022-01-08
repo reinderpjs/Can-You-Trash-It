@@ -7,10 +7,10 @@
   ],
   "key": {
     "W": {
-      "tag": "minecraft:cobblestone"
+      "item": "minecraft:cobblestone"
     },
     "R": {
-      "item": "minecraft:stone_slab"
+      "item": "minecraft:smooth_stone_slab"
     },
     "T": {
        "item": "minecraft:iron_ingot"
