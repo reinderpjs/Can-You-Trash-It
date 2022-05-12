@@ -82,7 +82,7 @@ public class FluidTrashcanBlockEntity extends BlockEntity implements BlockEntity
             else if (FluidStorage.ITEM.find(itemStack, ContainerItemContext.ofSingleSlot(InventoryStorage.of(this, null).getSlot(0))) != null) {
                 try (Transaction outerTransaction = Transaction.openOuter()) {
                     Storage<FluidVariant> fluidStorage = FluidStorage.ITEM.find(itemStack, ContainerItemContext.ofSingleSlot(InventoryStorage.of(this, null).getSlot(0)));
-                    Iterator<StorageView<FluidVariant>> storageViewIterator = fluidStorage.iterator(outerTransaction);
+                    Iterator<StorageView<FluidVariant>> storageViewIterator = (Iterator<StorageView<FluidVariant>>) fluidStorage.iterator(outerTransaction);
 
                     if (storageViewIterator.hasNext()) {
                         StorageView<FluidVariant> fluidStorageSpecs = storageViewIterator.next();

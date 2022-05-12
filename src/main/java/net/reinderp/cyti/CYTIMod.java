@@ -43,6 +43,8 @@ public class CYTIMod implements ModInitializer {
 			return null;
 		});
 
+		
+
 		LOGGER.info("The trashcans has been loaded!");
 	}
 }

@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RTR",
-    "W W",
-    "WWW"
+    "sis",
+    "c c",
+    "ccc"
   ],
   "key": {
-    "W": {
+    "c": {
       "item": "minecraft:cobblestone"
     },
-    "R": {
+    "s": {
       "item": "minecraft:smooth_stone_slab"
     },
-    "T": {
+    "i": {
        "item": "minecraft:iron_ingot"
     }
   },
