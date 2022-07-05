@@ -17,17 +17,17 @@ import net.reinderp.cyti.util.Identifiers;
 
 public class ModScreenHandlers {
 
-    public static final ScreenHandlerType<ItemTrashcanScreenHandler> ITEM_TRASHCAN_SCREEN_HANDLER;
-    public static final ScreenHandlerType<FluidTrashCanScreenHandler> FLUID_TRASHCAN_SCREEN_HANDLER;
-    public static final ScreenHandlerType<EnergyTrashcanScreenHandler> ENERGY_TRASHCAN_SCREEN_HANDLER;
+    public static final ScreenHandlerType<ItemTrashcanScreenHandler> ITEM_TRASHCAN_SCREEN_HANDLER = new ScreenHandlerType<>(ItemTrashcanScreenHandler::new);
+    public static final ScreenHandlerType<FluidTrashCanScreenHandler> FLUID_TRASHCAN_SCREEN_HANDLER = new ScreenHandlerType<>(FluidTrashCanScreenHandler::new);
+    public static final ScreenHandlerType<EnergyTrashcanScreenHandler> ENERGY_TRASHCAN_SCREEN_HANDLER = new ScreenHandlerType<>(EnergyTrashcanScreenHandler::new);
 
-    static {
-        ITEM_TRASHCAN_SCREEN_HANDLER = Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_ITEM,
-                new ScreenHandlerType<>(ItemTrashcanScreenHandler::new));
-        FLUID_TRASHCAN_SCREEN_HANDLER =  Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_FLUID,
-                new ScreenHandlerType<>(FluidTrashCanScreenHandler::new));
-        ENERGY_TRASHCAN_SCREEN_HANDLER =  Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_ENERGY,
-                new ScreenHandlerType<>(EnergyTrashcanScreenHandler::new));
+    public static void Initialize() {
+        Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_ITEM,
+                ITEM_TRASHCAN_SCREEN_HANDLER);
+        Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_FLUID,
+                FLUID_TRASHCAN_SCREEN_HANDLER);
+        Registry.register(Registry.SCREEN_HANDLER, Identifiers.TRASHCAN_ENERGY,
+                ENERGY_TRASHCAN_SCREEN_HANDLER);
     }
 
     public static void ClientInitialize() {

@@ -9,6 +9,7 @@ import net.reinderp.cyti.common.blockentities.FluidTrashcanBlockEntity;
 import net.reinderp.cyti.init.ModBlockEntities;
 import net.reinderp.cyti.init.ModBlocks;
 import net.reinderp.cyti.init.ModItems;
+import net.reinderp.cyti.init.ModScreenHandlers;
 import net.reinderp.cyti.util.Identifiers;
 import net.reinderp.cyti.config.TrashConfig;
 import org.apache.logging.log4j.LogManager;
@@ -25,6 +26,7 @@ public class CYTIMod implements ModInitializer {
 		ModBlocks.Initialize();
 		ModItems.Initialize();
 		ModBlockEntities.Initialize();
+		ModScreenHandlers.Initialize();
 		AutoConfig.register(TrashConfig.class, Toml4jConfigSerializer::new);
 
 		FluidStorage.SIDED.registerFallback((world, pos, state, blockEntity, direction) -> {
