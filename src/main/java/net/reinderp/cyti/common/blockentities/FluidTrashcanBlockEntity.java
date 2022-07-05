@@ -18,7 +18,6 @@ import net.minecraft.item.Items;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -55,7 +54,7 @@ public class FluidTrashcanBlockEntity extends BlockEntity implements BlockEntity
 
     @Override
     public Text getDisplayName() {
-        return new TranslatableText(getCachedState().getBlock().getTranslationKey());
+        return Text.translatable(getCachedState().getBlock().getTranslationKey());
     }
 
     @Nullable
@@ -82,7 +81,7 @@ public class FluidTrashcanBlockEntity extends BlockEntity implements BlockEntity
             else if (FluidStorage.ITEM.find(itemStack, ContainerItemContext.ofSingleSlot(InventoryStorage.of(this, null).getSlot(0))) != null) {
                 try (Transaction outerTransaction = Transaction.openOuter()) {
                     Storage<FluidVariant> fluidStorage = FluidStorage.ITEM.find(itemStack, ContainerItemContext.ofSingleSlot(InventoryStorage.of(this, null).getSlot(0)));
-                    Iterator<StorageView<FluidVariant>> storageViewIterator = (Iterator<StorageView<FluidVariant>>) fluidStorage.iterator(outerTransaction);
+                    Iterator<StorageView<FluidVariant>> storageViewIterator = (Iterator<StorageView<FluidVariant>>) fluidStorage.iterator();
 
                     if (storageViewIterator.hasNext()) {
                         StorageView<FluidVariant> fluidStorageSpecs = storageViewIterator.next();
