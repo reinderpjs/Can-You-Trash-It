@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
+import net.minecraft.text.*;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.reinderp.cyti.init.ModBlockEntities;
 import net.reinderp.cyti.render.guis.trashcan_item.ItemTrashcanScreenHandler;
 import net.reinderp.cyti.util.ImplementedInventory;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemTrashcanBlockEntity extends BlockEntity implements BlockEntityTicker<ItemTrashcanBlockEntity>, NamedScreenHandlerFactory, ImplementedInventory {
+public class ItemTrashcanBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
     protected DefaultedList<ItemStack> inventory;
 
@@ -42,11 +42,22 @@ public class ItemTrashcanBlockEntity extends BlockEntity implements BlockEntityT
     }
 
     @Override
-    public void tick(World world, BlockPos pos, BlockState state, ItemTrashcanBlockEntity blockEntity) {
-        if (!world.isClient) {
-            if (!inventory.get(0).isEmpty()) {
-                inventory.set(0, ItemStack.EMPTY);
-            }
-        }
+    public ItemStack getStack(int slot) {
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public ItemStack removeStack(int slot, int amount) {
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public ItemStack removeStack(int slot) {
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public void setStack(int slot, ItemStack stack) {
+        this.inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     }
 }
